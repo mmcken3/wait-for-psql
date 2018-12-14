@@ -1,4 +1,4 @@
-# Wait For PSQL
+# Wait For Postgres
 
 This is a container to use that waits for your Postgresql database server to start up being stopping.
 
@@ -26,7 +26,7 @@ go build -o waitforpsql main.go
 Get the current github short tag using this command:
 
 ```
-git log -1 --pretty=%h
+git describe --abbrev=0 --tags
 ```
 
 Build, Tag, and push this Docker image to Docker Hub using that tag.
