@@ -9,6 +9,7 @@ import (
 	"github.com/jimmysawczuk/try"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
+
 	// postgres driver
 	_ "github.com/lib/pq"
 )
@@ -25,14 +26,13 @@ func init() {
 
 func main() {
 	if len(os.Args) < 2 {
-		log.Fatalf("missing required argument: database connection string")
-		os.Exit(1)
+		log.Fatal("the database connection string is a required argument")
 	}
 
 	connectionString := os.Args[1]
 	start := time.Now()
 
-	log.Printf("attempting to connect to postgresql (will try for %s, %s between attempts)", timeout, interval)
+	log.Printf("attempting to connect to postgresql (trying for %s, %s between attempts)", timeout, interval)
 
 	if err := try.Try(connectToPSQL(connectionString), timeout, interval); err != nil {
 		log.Fatal(err)
