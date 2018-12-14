@@ -21,7 +21,7 @@ go build -o waitforpsql main.go
 
 ## Pushing to Docker Hub
 
-(Docker Hub)[https://hub.docker.com/r/mmcken3/wait-for-psql]
+[Docker Hub](https://hub.docker.com/r/mmcken3/wait-for-psql)
 
 Get the current github short tag using this command:
 
