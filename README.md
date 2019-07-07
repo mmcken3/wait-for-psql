@@ -37,3 +37,11 @@ docker tag mmcken3/wait-for-psql:latest mmcken3/wait-for-psql:[github-tag]
 docker push mmcken3/wait-for-psql:latest
 docker push mmcken3/wait-for-psql:[github-tag]
 ```
+
+## Go Dep
+
+This tool is now set up to be using go mods with the vendors committed as of v1.1. If you would like to use the version of this tool that uses dep it was switched over after release v1.0. Here are steps for how to get yourself in a new branch with the tool that was using dep.
+
+git clone https://github.com/mmcken3/wait-for-psql.git
+cd wait-for-psql
+git checkout tags/v1.0 -b wait-with-dep
